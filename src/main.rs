@@ -1,6 +1,6 @@
 use std::{collections::HashMap, fs::File};
 use tiny_http::{Header, Request, Response, Server};
-use tomaotclock::{entity::*, sqlite, utils};
+use tomatoclock::{entity::*, sqlite, utils};
 use urlencoding::decode;
 
 fn main() {

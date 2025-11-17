@@ -1,6 +1,6 @@
 [package]
-name = "tomaotclock"
-version = "1.1.0"
+name = "tomatoclock"
+version = "1.1.2"
 edition = "2024"
 
 [dependencies]
