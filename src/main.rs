@@ -4,13 +4,23 @@ use tomaotclock::{entity::*, sqlite, utils};
 use urlencoding::decode;
 
 fn main() {
+    let config_path = "./config/config.toml";
+    let config = utils::read_config(config_path);
+    if let Err(e) = config {
+        println!("get config error. path={} e = {:?}", config_path, e);
+        return;
+    }
+    let config = config.unwrap();
+    println!("config={:?}", config);
+    let port = config.port.unwrap_or(8080);
+    
     sqlite::init_tables();
     sqlite::init_datas();
 
-    match Server::http("0.0.0.0:8080") {
+    match Server::http(&format!("0.0.0.0:{}", port)) {
         Err(_) => println!("start server error;check port is alread used?"),
         Ok(server) => {
-            let html_dir = "./web/"; // 指定你的静态文件目录
+            let html_dir = config.webdir.unwrap_or("./web/".to_string()); // 指定你的静态文件目录
             for request in server.incoming_requests() {
                 let mut content_type = "";
                 let mut is_api = false;

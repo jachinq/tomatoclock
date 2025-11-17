@@ -1,0 +1,8 @@
+# 配置数据库连接
+datasource="./data/tomatoclock.db"
+
+# 端口，默认8080
+# port=8080
+
+# web路径，默认./web/
+# web_path="./web/"

@@ -1,7 +1,25 @@
+use std::{fs, path::Path};
+
 use rusqlite::{Connection, Error, Result};
 
+use crate::utils;
+
 pub fn connect() -> Result<Connection> {
-    Connection::open("/home/admin/data/tomatoclock_sqlite.db")
+    let config_path = "./config/config.toml";
+    let config = utils::read_config(config_path);
+    let datasource = match config {
+        Err(e) => {
+            println!("get config error. path={} e = {:?}", config_path, e);
+            "/home/admin/data/tomatoclock_sqlite.db".to_string()
+        }
+        Ok(config) => config.datasource,
+    };
+     // 创建数据库的文件夹
+        let dir_path = Path::new(&datasource).parent().unwrap();
+        if!dir_path.exists() {
+            fs::create_dir_all(dir_path).unwrap();
+        }
+    Connection::open(datasource)
 }
 
 pub fn init_tables() {
