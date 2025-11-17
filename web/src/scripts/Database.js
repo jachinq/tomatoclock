@@ -3,7 +3,7 @@ import EventBus from "./EventBus";
 import Util, { mesgNotice, music } from "./Util";
 import mitt from "./mitt";
 
-const IS_DEV = true;
+const IS_DEV = process.env.NODE_ENV === "development";
 const BACKEND_URL = IS_DEV ? "http://localhost:8080" : "";
 
 async function fetchData(cmd, params) {
