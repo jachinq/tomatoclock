@@ -1,0 +1,72 @@
+/* Switch button  */
+.switch-wrapper {
+    width: max-content;
+    display: grid;
+    grid-template-columns: 1fr var(--slide-width);
+    gap: 8px;
+    --body-background: #8b8b8b;
+    --slide-color-before: #ffffff;
+    --slide-color: #6ea2e7;
+    --checked-color: #265777;
+    --slide-radius: 32px;
+    --slide-width: calc(var(--slide-radius) * 2);
+    cursor: pointer;
+    @apply hover:text-blue-400
+}
+
+.switch__label {
+    white-space: nowrap;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: var(--slide-width);
+    height: var(--slide-radius);
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background-color: var(--body-background);
+    transition: .6s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: var(--slide-radius);
+    width: var(--slide-radius);
+    /* left: 4px; */
+    /* bottom: 4px; */
+    background-color: var(--slide-color-before);
+    transition: .6s cubic-bezier(0, 0.57, 0.43, 0.99);
+    transform: scale(0.8);
+
+}
+
+.switch input:checked+.slider {
+    background-color: var(--checked-color);
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(calc(var(--slide-width) - var(--slide-radius))) scale(0.9);
+    background-color: var(--slide-color);
+    /* animation: bounce 0.6s cubic-bezier(0, 0.57, 0.43, 0.99) forwards alternate; */
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: var(--slide-radius);
+    
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

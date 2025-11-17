@@ -1,0 +1,26 @@
+.tabs {
+    @apply relative mb-2
+}
+.tab-item{
+    @apply text-center h-6
+    hover:cursor-pointer hover:text-blue-400
+    min-w-[100px]
+    transition-all
+    /* border border-solid border-x-0 border-t-0 border-b-2 border-gray-400 */
+}
+
+.tab-def-active{
+    @apply transition-all
+    border-solid border-x-0 border-t-0 border-b-2 border-blue-400
+}
+.tab-active{
+    @apply h-6 transition-all 
+    /* bg-blue-500  */
+    absolute -z-[1]
+    left-0 w-0
+    border border-solid border-x-0 border-t-0 border-b-2 border-blue-400
+}
+.tab-body {
+    margin-top: 1rem;
+    overflow-y: scroll;
+}

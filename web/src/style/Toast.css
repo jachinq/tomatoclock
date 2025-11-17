@@ -1,0 +1,22 @@
+.notification {
+    position: absolute;
+    top: calc(24px + 64px * var(--i));
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fade-in var(--d) linear;
+    
+    @apply rounded m-auto z-50 left-0 right-0 w-max
+        bg-[var(--notification-background)] text-[var(--notification-primary)]
+}
+
+.notification__body {
+    @apply p-2 flex items-center flex-row
+}
+
+@keyframes fade-in {
+    5%, 95% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

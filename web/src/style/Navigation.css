@@ -1,0 +1,17 @@
+.nav-active {
+    @apply
+    border border-solid border-x-0 border-t-0
+    hover:scale-105
+}
+
+.navigation-wrap {
+    @apply absolute top-2 right-2 flex flex-col justify-center items-center p-2 gap-1
+    border-solid border-gray-200 rounded-xl
+    hover:shadow-lg hover:bg-gray-50 hover:dark:bg-slate-900
+    shadow-gray-400 dark:shadow-gray-400
+}
+
+.navigation-item {
+    @apply flex flex-col justify-center p-2 rounded-xl transition-all
+    hover:bg-gray-200 hover:dark:bg-gray-600 hover:cursor-pointer
+}

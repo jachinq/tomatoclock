@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  tomatoclock-server:
+    image: tomatoclock-server
+    ports:
+      - 10013:8080
+    container_name: tomatoclock-server
+    volumes:
+      - ./:/app

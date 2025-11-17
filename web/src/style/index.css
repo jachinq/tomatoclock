@@ -1,0 +1,67 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  /* @apply dark:bg-slate-800 dark:text-gray-100; */
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*滚动条样式*/
+::-webkit-scrollbar {
+  display: none; /*隐藏滚动条*/
+  width: 6px;
+  height: 6px;
+  /*background-color: #f1f1f1;*/
+  border-radius: 16px;
+  background-color: var(--bg-white-mask);
+}
+
+/*滑块样式*/
+::-webkit-scrollbar-thumb {
+  /*background-color: #b2b2b2;*/
+  background-color: rgba(1, 1, 1, 0.15);
+  width: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+}
+
+
+@keyframes animation-spin-in {
+  from { transform: rotate(0); }
+  to { transform: rotate(180deg); }
+}
+@keyframes animation-spin-out {
+  from { transform: rotate(180deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animation-spin-hover:hover {
+  animation: animation-spin-in 1s ease-in-out forwards;
+}
+
+@keyframes animation-open {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.animation-open {
+  transform-origin: bottom center;
+  animation: animation-open 250ms ease-in-out;
+}

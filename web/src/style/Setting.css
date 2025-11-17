@@ -1,0 +1,8 @@
+.setting-form input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{ /* google、safari */
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+.setting-form input[type="number"]{ /* 火狐 */
+    -moz-appearance: textfield;
+}

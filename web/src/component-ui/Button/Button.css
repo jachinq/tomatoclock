@@ -1,0 +1,71 @@
+.button {
+    @apply border-none px-2 py-1 m-1 rounded-sm
+    hover:cursor-pointer
+    bg-gray-200 dark:bg-gray-600
+    text-gray-900 dark:text-gray-50
+    hover:bg-gray-600 hover:dark:bg-gray-200
+    hover:text-gray-50 hover:dark:text-gray-900
+    active:bg-gray-400 active:dark:bg-gray-400 
+}
+
+.button-danger {
+    @apply
+    bg-red-200 dark:bg-red-600
+    text-red-900 dark:text-red-50
+    hover:bg-red-600 hover:dark:bg-red-200
+    hover:text-red-50 hover:dark:text-red-900
+    active:bg-red-400 active:dark:bg-red-400 
+}
+.button-danger .icon {
+    @apply group-hover:fill-red-50 group-hover:dark:fill-red-900
+}
+
+.button-success {
+    @apply
+    bg-green-200 dark:bg-green-600
+    text-green-900 dark:text-green-50
+    hover:bg-green-600 hover:dark:bg-green-200
+    hover:text-green-50 hover:dark:text-green-900
+    active:bg-green-400 active:dark:bg-green-400 
+}
+.button-success .icon {
+    @apply group-hover:fill-green-50 group-hover:dark:fill-green-900
+}
+
+.button-warning {
+    @apply
+    bg-yellow-200 dark:bg-yellow-600
+    text-yellow-900 dark:text-yellow-50
+    hover:bg-yellow-600 hover:dark:bg-yellow-200
+    hover:text-yellow-50 hover:dark:text-yellow-900
+    active:bg-yellow-400 active:dark:bg-yellow-400 
+}
+.button-warning .icon {
+    @apply group-hover:fill-yellow-50 group-hover:dark:fill-yellow-900
+}
+
+.button-primary {
+    @apply
+    bg-blue-200 dark:bg-blue-600
+    text-blue-900 dark:text-blue-50
+    hover:bg-blue-600 hover:dark:bg-blue-200
+    hover:text-blue-50 hover:dark:text-blue-900
+    active:bg-blue-400 active:dark:bg-blue-400 
+}
+.button-primary .icon {
+    @apply 
+    fill-blue-900 dark:fill-blue-50
+    group-hover:fill-blue-50 group-hover:dark:fill-blue-900
+}
+
+.button-info {
+    @apply
+    bg-white dark:bg-black
+    text-black dark:text-white
+    hover:bg-gray-600 hover:dark:bg-gray-200
+    hover:text-gray-50 hover:dark:text-gray-900
+    active:bg-gray-400 active:dark:bg-gray-400 
+}
+.button-info .icon {
+    @apply group-hover:fill-gray-50 group-hover:dark:fill-gray-900
+}
