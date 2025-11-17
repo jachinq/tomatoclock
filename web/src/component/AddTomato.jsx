@@ -13,6 +13,7 @@ import { useMemo } from "react";
 import Toast from "../component-ui/Toast";
 import useAsync from "../hooks/useAsync";
 import { get_historys } from "../scripts/Database";
+import Storge from "../scripts/Storge";
 
 export default function AddTomato({setting = {}, close=()=>{}}) {
 
@@ -42,9 +43,11 @@ export default function AddTomato({setting = {}, close=()=>{}}) {
             return;
         }
 
+        
         close(false)
         clock["time"] = new Date().getTime();
         clock['id'] = nanoid()
+        Storge.setTomato(clock);
         mitt.emit(EventBus.START_TOMATO, clock);
     }
 
@@ -109,6 +112,11 @@ export default function AddTomato({setting = {}, close=()=>{}}) {
     }, [historys])
     
     useEffect(() => {
+        const localHistory = Storge.getTomato();
+        if (localHistory && localHistory.name) {
+            setClock(localHistory);
+            return;
+        }
         // 如果没有配置默认专注信息的话，就从历史里面拿
         const clockFocusTime = setting?.clockFocusTime;
         if (clockFocusTime === undefined || clockFocusTime === null || clockFocusTime === "") {

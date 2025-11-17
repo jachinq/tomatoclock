@@ -23,32 +23,57 @@
 
 ## 使用技术
 
-- React
-- mitt
-- Vite
-- tailwindcss
+- forntend
+  - React
+  - mitt
+  - Vite
+  - tailwindcss
+- backend
+  - rust
+  - tinyhttp
+  - rusqlite
 
 
 
 ## 安装和启动
 
+### 后端
+
+开发
+
+```bash
+cargo run
+```
+
+构建
+
+```bash
+cargo build --release --target x86_64-unknown-linux-musl
+```
+
+### 前端
+
 安装依赖
 
-```
+```bash
 pnpm install
 ```
 
 启动项目
 
-```
+```bash
 pnpm run dev
 ```
 
 构建项目
 
-```
+```bash
 pnpm run build
 ```
 
 访问：http://localhost:5173/
 
+## 更新日志
+
+- 2024-03-10 完成基本功能，发布 v1.0.0 版本
+- 2025-11-17 调整添加时钟获取历史数据逻辑
