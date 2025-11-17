@@ -73,6 +73,22 @@ pnpm run build
 
 访问：http://localhost:5173/
 
+
+## docker 部署
+
+```bash
+cargo build --release --target x86_64-unknown-linux-musl
+cp target/x86_64-unknown-linux-musl/release/tomatoclock docker/app
+
+cd web
+pnpm run build
+cp -r dist/* docker/web/
+
+cd docker
+docker build -t tomatoclock:latest .
+docker run -p 5173:5173 tomatoclock:latest
+```
+
 ## 更新日志
 
 - 2024-03-10 完成基本功能，发布 v1.0.0 版本
